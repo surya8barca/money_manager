@@ -14,6 +14,14 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import { CreateTableFormComponent } from './components/create-table-form/create-table-form.component'
+import {MatRadioModule} from '@angular/material/radio';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { UploadTableComponent } from './components/upload-table/upload-table.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -24,13 +32,21 @@ import { CreateTableFormComponent } from './components/create-table-form/create-
     BannerComponent,
     DashboardComponent,
     LoadingComponent,
-    CreateTableFormComponent
+    CreateTableFormComponent,
+    UploadTableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatProgressSpinnerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatRadioModule,
+    MatIconModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [
     provideClientHydration(),

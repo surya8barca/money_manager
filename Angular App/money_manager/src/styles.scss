@@ -2,3 +2,23 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.headingText{
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-align: center;
+  color: cyan;
+}
+
+.formLabelText{
+  font-size: 18px;
+  font-family: sans-serif;
+  font-family: 500;
+  text-align: left;
+  color: white;
+}
+
+.radioButtonText{
+  color: white;
+}

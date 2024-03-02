@@ -1,0 +1,13 @@
+<div class="tableUpload">
+  <label class="formLabelText">Upload your file (CSV/XLXX)</label>
+  <br>
+  <input style="display: none;" type="file" (change)="onFileSelected($event)" accept=".xlsx, .xls,.csv" #fileInput>
+  <button (click)="fileInput.click()" mat-fab color="primary">
+    <mat-icon>upload_file</mat-icon>
+  </button>
+  <br>
+  <span class="formLabelText" *ngIf="fileName!=null">{{fileName}}</span>
+  <br>
+  <button *ngIf="file != null" mat-raised-button color="primary" (click)="previewFile()">Preview</button>
+</div>
+

@@ -1,5 +1,6 @@
 const routeConstants = {
-    NEW_TABLE_ROUTE:"/createTable"
+    CORS_LINK:"http://localhost:4200",
+    TABLE_CHECK:"/checkForTables"
 } 
 
 

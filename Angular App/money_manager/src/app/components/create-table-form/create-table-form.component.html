@@ -1,1 +1,13 @@
-<p>create-table-form works!</p>
+<div class="newTableForm">
+  <span class="headingText">Create New Table</span>
+  <div class="buttonChoiceDiv">
+    <label class="formLabelText">Select method of Form Creation</label>
+    <mat-radio-group [(ngModel)]="formCreationType">
+      <mat-radio-button color="primary" value="upload"><span class="radioButtonText">Upload table</span></mat-radio-button>
+      <mat-radio-button color="primary" value="customize"><span class="radioButtonText">Customize table</span></mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div *ngIf="formCreationType === 'upload'" class="uploadForm">
+    <app-upload-table></app-upload-table>
+  </div>
+</div>
