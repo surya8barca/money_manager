@@ -1,0 +1,22 @@
+
+.headerStyle{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.homeContent{
+  position: absolute;
+  margin-top: 4vw;
+  width: 100%;
+}
+
+.sideNav{
+  width: 20%;
+  float: left;
+}
+
+.mainContent{
+  width: 80%;
+  float: right;
+}

@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class BannerComponent {
 
+  logoSrc:string='../../../assets/Icons/bannerLogo.png'
+
 }

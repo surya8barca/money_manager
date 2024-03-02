@@ -2,6 +2,6 @@ const express = require('express');
 const router = express.Router();
 const controller = require('./controller');
 
-router.get('/items',  controller.getExpenses);
+router.get('/checkForTables',  controller.getTables);
 
 module.exports = router;
