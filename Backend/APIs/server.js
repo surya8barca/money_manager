@@ -1,28 +1,16 @@
-const db = require("msnodesqlv8");
+const db = require("mysql2");
 
-const conn = require("./config")
+const config = require("./config")
 
+const conn = db.createConnection(config.dbConfiguration);
 
-runQuery = async function(query) {
-    if(query.trim().length !== 0)
-    {
-        console.log("hey");
-        await db.query(conn.connectionString,query, (err,rows)=>{
-            if(err)
-            {
-                console.log("error");
-                console.log(err.message);
-                return null;
-            }
-            else
-            {
-                console.log("success")
-                return rows;
-            }
-        })
+conn.connect((err) => {
+    if (err) {
+      console.error('Error connecting to MySQL database:', err);
+      return;
     }
-}
+    console.log('Connected to MySQL database');
+  });
+  
 
-module.exports = {
-    runQuery:runQuery
-};
+module.exports = conn;

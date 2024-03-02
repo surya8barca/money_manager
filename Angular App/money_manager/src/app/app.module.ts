@@ -12,6 +12,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoadingComponent } from './common/loading/loading.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import {MatButtonModule} from '@angular/material/button';
+import { CreateTableFormComponent } from './components/create-table-form/create-table-form.component'
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
     FooterComponent,
     BannerComponent,
     DashboardComponent,
-    LoadingComponent
+    LoadingComponent,
+    CreateTableFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatButtonModule
   ],
   providers: [
     provideClientHydration(),

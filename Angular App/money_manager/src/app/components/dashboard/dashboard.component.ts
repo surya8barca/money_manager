@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InitialSetupService } from '../../services/initialSetup/initial-setup.service';
 import { LoadingService } from '../../services/common/loading/loading.service';
+import { routeConstants,messageConstants } from '../../properties/properties';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,7 +22,10 @@ export class DashboardComponent implements OnInit {
   }
 
   tablesAvailable:boolean=false;
+  availableTables!:any[];
   erromsg:string="";
+  noTablesError:string=messageConstants.NO_TABLES_FOUND;
+  createTableRoute:any = routeConstants.NEW_TABLE_ROUTE;
 
   checkForTable(){
     this.loading.show();
@@ -29,11 +33,8 @@ export class DashboardComponent implements OnInit {
       {
         next:(data)=>{
           this.loading.hide();
-          console.log(data);
-          if(data.length !== 0)
-          {
-            this.tablesAvailable=true;
-          }
+          this.tablesAvailable=true;
+          this.availableTables=data;
         },
         error:(error)=>{
           this.loading.hide();

@@ -1,6 +1,10 @@
 <div class="errorMsg" *ngIf="!tablesAvailable">
-  <span>{{erromsg}}</span>
+  <span>{{ erromsg }}</span>
 </div>
 <div *ngIf="tablesAvailable">
-<p>DashBoard</p>
+  <div class="errorMsg" *ngIf="availableTables.length == 0">
+    <span>{{ noTablesError }}</span>
+    <br>
+    <button [routerLink]="createTableRoute" mat-raised-button color="primary">Create Table</button>
+  </div>
 </div>
