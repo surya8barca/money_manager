@@ -3,6 +3,13 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.headerStyle{
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
 .headingText{
   font-size: 30px;
   font-family: 'Times New Roman', Times, serif;
@@ -21,4 +28,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .radioButtonText{
   color: white;
+}
+
+.raisedButtonStyle{
+  margin-left: 5px;
+  width: 6vw;
 }

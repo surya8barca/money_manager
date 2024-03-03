@@ -8,6 +8,24 @@
   <br>
   <span class="formLabelText" *ngIf="fileName!=null">{{fileName}}</span>
   <br>
-  <button *ngIf="file != null" mat-raised-button color="primary" (click)="previewFile()">Preview</button>
+  <div>
+    <button class="raisedButtonStyle" *ngIf="dataSourceAvailable " mat-raised-button color="primary" (click)="createTable()">Upload</button>
+    <button class="raisedButtonStyle" *ngIf="fileName!=null && !dataSourceAvailable " mat-raised-button color="primary" (click)="previewFile()">Preview</button>
+    <button class="raisedButtonStyle" *ngIf="fileName!=null" mat-raised-button color="primary" (click)="reset()">Reset</button>
+  </div>
+</div>
+
+<div class="reviewTable" [hidden]="!dataSourceAvailable">
+    <table mat-table [dataSource]="dataSource">
+      <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+        <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+        <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <br>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  <br>
 </div>
 

@@ -22,6 +22,10 @@ import { FormsModule } from '@angular/forms';
 import { UploadTableComponent } from './components/upload-table/upload-table.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule} from '@angular/material/paginator';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TableCreationDialogComponent } from './components/dialogs/table-creation-dialog/table-creation-dialog.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +37,8 @@ import { MatPaginatorModule} from '@angular/material/paginator';
     DashboardComponent,
     LoadingComponent,
     CreateTableFormComponent,
-    UploadTableComponent
+    UploadTableComponent,
+    TableCreationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,9 @@ import { MatPaginatorModule} from '@angular/material/paginator';
     ReactiveFormsModule,
     FormsModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [
     provideClientHydration(),

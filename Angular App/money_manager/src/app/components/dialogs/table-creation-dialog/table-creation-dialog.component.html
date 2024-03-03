@@ -1,0 +1,10 @@
+<div style="padding: 15px;">
+  <label style="color: black;" class="formLabelText">Enter Table Name:</label>
+  <mat-dialog-content>
+    <input matInput [(ngModel)]="tableName">
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="close()">Cancel</button>
+    <button mat-button (click)="submit()">Submit</button>
+  </mat-dialog-actions>
+</div>
